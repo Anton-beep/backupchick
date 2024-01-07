@@ -146,7 +146,7 @@ class Bot:
                 return
 
             asyncio.run(self.telegram_api.send_message(chat_id, 'Creating backup...'))
-            self.create_and_send_backup('../backupDir', chat_id)
+            self.create_and_send_backup('./backupDir', chat_id)
         except ValueError:
             logging.warning(f'No chat id in update: {update}')
 
