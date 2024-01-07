@@ -1,4 +1,10 @@
-# Setup (Dcoker)
+# Setup (Docker)
+
+arguments to executable:
+- `--telegram_token` - telegram bot token
+- `--backup_interval` - backup interval in seconds
+- `--chat_password` - password to authorize in bot
+- `--remove_white_list` - remove white list of users (default: `false`)
 ```shell
 git clone https://github.com/Anton-beep/backupchick
 cd backupchick
