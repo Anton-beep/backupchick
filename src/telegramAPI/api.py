@@ -14,7 +14,7 @@ class TelegramAPI:
             'offset': offset
         }
 
-        return requests.get(url, params)
+        return requests.get(url, params, timeout=None)
 
     async def send_message(self, chat_id: int, text: str, parse_mode: str = 'Markdown') -> requests.Response:
         url = f'{self.api_url}/bot{self.token}/sendMessage'
@@ -24,7 +24,7 @@ class TelegramAPI:
             'parse_mode': parse_mode
         }
 
-        return requests.post(url, params)
+        return requests.get(url, params, timeout=None)
 
     async def send_file(self, chat_id: int, file_name: str, file_data: bytes) -> requests.Response:
         url = f'{self.api_url}/bot{self.token}/sendDocument'
@@ -32,4 +32,4 @@ class TelegramAPI:
             'chat_id': chat_id,
         }
 
-        return requests.post(url, data=params, files={'document': (file_name, file_data)})
+        return requests.post(url, data=params, files={'document': (file_name, file_data)}, timeout=None)
