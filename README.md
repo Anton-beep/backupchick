@@ -12,6 +12,15 @@ docker build -t backupchick .
 docker run -d --name backupchick -v <local dir to backup>:/usr/src/app/backupDir backupchick --telegram_token=<your telegram token> --backup_interval=<backup interval in seconds> --chat_password=<your chat password>  
 ```
 
+_to update_
+```shell
+rm -rf backupchick
+git clone https://github.com/Anton-beep/backupchick
+cd backupchick
+docker build -t backupchick .
+docker run -d --name backupchick -v <local dir to backup>:/usr/src/app/backupDir backupchick --telegram_token=<your telegram token> --backup_interval=<backup interval in seconds> --chat_password=<your chat password>  
+```
+
 You can check if bot is running by sending `%ping` command to it in Telegram.
 
 To authorize in bot you need to send `%auth <your chat password>` command to it.
