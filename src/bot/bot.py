@@ -44,7 +44,8 @@ class WhiteList:
         try:
             with open(self.dir_path, 'r') as f:
                 self.white_list = f.read().split('\n')
-            self.white_list.remove('')
+            if '' in self.white_list:
+                self.white_list.remove('')
         except FileNotFoundError:
             with open(self.dir_path, 'w') as f:
                 f.write('')
