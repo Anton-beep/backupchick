@@ -189,7 +189,12 @@ class Bot:
 
         while True:
             offset_temp = self.offset.get()
-            updates = asyncio.run(self.telegram_api.get_updates(offset_temp)).json()['result']
+            resp = asyncio.run(self.telegram_api.get_updates(offset_temp))
+            try:
+                updates = resp.json()['result']
+            except Exception:
+                logging.warning(f'Bad response: {resp.text}')
+                continue
 
             for update in updates:
                 offset_temp = update['update_id'] + 1
