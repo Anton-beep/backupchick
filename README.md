@@ -17,6 +17,7 @@ _to update_
 rm -rf backupchick
 git clone https://github.com/Anton-beep/backupchick
 cd backupchick
+docker remove backupchick
 docker build -t backupchick .
 docker run -d --name backupchick -v <local dir to backup>:/usr/src/app/backupDir backupchick --telegram_token=<your telegram token> --backup_interval=<backup interval in seconds> --chat_password=<your chat password>  
 ```
