@@ -24,7 +24,7 @@ docker run -d --name backupchick -v <local dir to backup>:/usr/src/app/backupDir
 
 You can check if bot is running by sending `%ping` command to it in Telegram.
 
-To authorize in bot you need to send `%auth <your chat password>` command to it.
+To authorize in bot you need to send `%password <your chat password>` command to it.
 
 To check if you are authorized you need to send `%status` command to it.
 
